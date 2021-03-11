@@ -14,7 +14,7 @@
     <form action="{% url 'polls:vote' question.id %}" method="post"> <!--提交表單-->
     {% csrf_token %}   <!-- 在Question的每一個Choice前添加一個單選按鈕 -->
     {% for choice in question.choice_set.all %}
-        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="={{ choice.id }}">
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
         <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}   <!-- forloop.counter: 指for標籤已經循環多少次 -->
     <input type="submit" value="Vote">

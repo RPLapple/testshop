@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
+from django.utils import timezone
 
 from .models import Choice, Question
 
@@ -18,13 +19,22 @@ class IndexView(generic.ListView):          # ListView: 顯示一個對象列表
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+        return Question.objects.filter(
+            pub_date__lte=timezone.now()
+        ).order_by('-pub_date')[:5]
+        # """Return the last five published questions."""
+        # return Question.objects.order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):       # DetailView: 顯示一個特定類對象的詳細信息頁面
     model = Question                        # DV: 期望從URL中捕獲pk值 -> question_id ->pk
     template_name = 'polls/detail.html'     # <app name>/<model name>_detail.html
+
+    # 就算在发布日期时，未来的投票不会在目录页 index里出现，
+    # 但是如果用户知道或者猜到正确的URL，还是可以访问到它。所以得在 DetailView 里增加一些约束：
+    # Excludes any questions that aren't published yet.
+    def get_queryset(self):
+        return Question.objects.filter(pub_date__lte=timezone.now())
 
 
 class ResultsView(generic.DetailView):

@@ -12,8 +12,11 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    # 修改 models.py 里的方法，让它只在日期是过去式的时候才返回 True：
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+        # return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
 class Choice(models.Model):
