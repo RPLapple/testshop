@@ -59,7 +59,8 @@ TEMPLATES = [
         # 讓templates可運行非內建資料，
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'blog', 'templates', 'blog')],
-        'APP_DIRS': True,  # 使DjangoTemplates，在每個INSTALLED_APPS中找templates子目錄
+        # 使DjangoTemplates，在每個INSTALLED_APPS中找templates子目錄
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -126,4 +127,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static')]  # 本來字不會變色，加了這行就可了
 
-SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))

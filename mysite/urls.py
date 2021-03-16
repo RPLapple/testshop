@@ -17,10 +17,16 @@ from django.contrib import admin
 from django.urls import include, path
 
 
+# from polls.urls import urlpatterns as polls_patterns
+# from blog.urls import urlpatterns as blog_patterns
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('polls/', include('polls.urls')),
-    path('blog/', include('blog.urls')),
+    path('polls/', include('polls.urls', namespace='polls')),
+    path('blog/', include('blog.urls', namespace='blog')),
+    # path('polls/', include(polls_patterns)),
+    # path('blog/', include(blog_patterns)),
 ]
 
 

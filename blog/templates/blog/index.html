@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Review and test again for deploy</title>
-</head>
-<body>
+<!-- django template tag 讓我們能夠繼承其他 html -->
+{% extends "blog/base.html" %}
+{% block content %}
+<br>
     <div align="center">
         <form method="post" action="./api/username">
             ur name: <input type="text" name="username" placeholder="name">
@@ -15,10 +9,39 @@
         </form>
 
     </div>
+<br>
+    <div align="center">
+        var: {{ first_var }} and {{ second_var }}
+        <ul style="list-style:none">
+            {% for sub_item in third_list %}
+            <!-- 去除前面的小黑點 -->
+            <li style="list-style:none">
+                {{ sub_item }}
+            </li>
+            {% endfor %}
+        </ul>
+        <ul style="list-style:none">
+            {% for sub_item in third_list%}
+              {% if sub_item == "SQ" %}
+              <li>
+              <!-- 這根直槓槓，就是 django template filter -->
+                {{ second_var|add:100}}
+              </li>
+              {% elif sub_item == "YY"%}
+              <li>
+                  Your dream life will come true in 3 years.
+              </li>
+              {% else %}
+              <li>
+                  {{ sub_item }}
+              </li>
+              {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 
-</body>
-<footer>
-    <div align="center"> Made in YYL, 2021-03-16</div>
-</footer>
+<br>
+<br>
 
-</html>
+<!-- 依舊別忘了 closing -->
+{% endblock %}
