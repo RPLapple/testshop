@@ -38,6 +38,7 @@ INSTALLED_APPS = [                  # Django自帶應用
     'django.contrib.messages',      # 消息框架
     'django.contrib.staticfiles',   # 管理靜態文件的框架
     'polls.apps.PollsConfig',
+    'blog',                         # 不做怎麼知道系列
 ]
 
 MIDDLEWARE = [
@@ -53,9 +54,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
-    {
+    {    # DIRS: 是一個包含多个系统目录的文件列表，用于在载入 Django 模板时使用的待搜索路径。
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # 讓templates可運行非內建資料
         'APP_DIRS': True,  # 使DjangoTemplates，在每個INSTALLED_APPS中找templates子目錄
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+# WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
@@ -120,3 +122,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static')]  # 本來字不會變色，加了這行就可了
