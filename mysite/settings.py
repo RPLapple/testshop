@@ -56,7 +56,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {    # DIRS: 是一個包含多个系统目录的文件列表，用于在载入 Django 模板时使用的待搜索路径。
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # 讓templates可運行非內建資料
+        # 讓templates可運行非內建資料，
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'blog', 'templates', 'blog')],
         'APP_DIRS': True,  # 使DjangoTemplates，在每個INSTALLED_APPS中找templates子目錄
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +125,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static')]  # 本來字不會變色，加了這行就可了
+
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
