@@ -1,47 +1,36 @@
-<!-- django template tag 讓我們能夠繼承其他 html -->
 {% extends "blog/base.html" %}
+
+
 {% block content %}
-<br>
-    <div align="center">
-        <form method="post" action="./api/username">
-            ur name: <input type="text" name="username" placeholder="name">
-            <button type="submit">submit</button>
-        </form>
-
-    </div>
-<br>
-    <div align="center">
-        var: {{ first_var }} and {{ second_var }}
-        <ul style="list-style:none">
-            {% for sub_item in third_list %}
-            <!-- 去除前面的小黑點 -->
-            <li style="list-style:none">
-                {{ sub_item }}
-            </li>
-            {% endfor %}
-        </ul>
-        <ul style="list-style:none">
-            {% for sub_item in third_list%}
-              {% if sub_item == "SQ" %}
-              <li>
-              <!-- 這根直槓槓，就是 django template filter -->
-                {{ second_var|add:100}}
-              </li>
-              {% elif sub_item == "YY"%}
-              <li>
-                  Your dream life will come true in 3 years.
-              </li>
-              {% else %}
-              <li>
-                  {{ sub_item }}
-              </li>
-              {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
+<div align="center">
+    <form method="post" action="./api/username">
+        你的名字：<input type="text" name="username" placeholder="name"> 
+                    <button type="submit">送出</button>
+     </form>
+</div>
 
 <br>
-<br>
+<div>
+    var: {{ first_var }} and {{ second_var }}.
 
-<!-- 依舊別忘了 closing -->
+    <ul>
+        {% for sub_item in third_list %}
+            {% if sub_item == "來比對我阿" %}
+                <li>
+                    {{ second_var|add:100 }}
+                </li>
+            {% elif sub_item == "你好" %}
+                <li>
+                    真正高興地見到你
+                </li>
+            {% else %}
+                <li>
+                    {{ sub_item }}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<br>
 {% endblock %}

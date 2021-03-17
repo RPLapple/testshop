@@ -1,14 +1,16 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
-from .views import hello, post_create_view, test_json_response_view
+
+from shop.views import shop_view
+# from . import views
+# from .views import hello, post_create_view, test_json_response_view
 
 app_name = 'shop'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', hello),
-    path('create/', post_create_view),
-    path('test/', test_json_response_view)
+    path('', shop_view),
+    # path('create/', post_create_view),        # 刪除舊的練習檔
+    # path('test/', test_json_response_view)    # 刪除舊的練習檔
 ]
 
 # http://127.0.0.1:8000/polls/specifics/1

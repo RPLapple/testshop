@@ -36,7 +36,7 @@ INSTALLED_APPS = [                  # Django自帶應用
     'django.contrib.contenttypes',  # 內容類型框架
     'django.contrib.sessions',      # 會話框架
     'django.contrib.messages',      # 消息框架
-    'django.contrib.staticfiles',   # 管理靜態文件的框架
+    'django.contrib.staticfiles',   # 管理靜態文件的框架,有這項才能套用css
     'polls.apps.PollsConfig',
     'shop',                         # 不做怎麼知道系列
 ]
@@ -56,9 +56,13 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {    # DIRS: 是一個包含多个系统目录的文件列表，用于在载入 Django 模板时使用的待搜索路径。
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 讓templates可運行非內建資料，
+        # 讓templates可運行非內建資料
+        # 這項 DIRS 可以決定我們的 templates 路徑
+        # 以這邊留空來講，我的 html 就放在 shop/templates/shop/ 底下
+        # 在 views.py 就可以用 'shop/shop.html' 來取用
+        # 所以留空就代表是預設在 app 資料夾底下的 templates/ (真的嗎＝＝？
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'blog', 'templates', 'blog')],
+                 os.path.join(BASE_DIR, 'shop', 'templates', 'shop')],
         # 使DjangoTemplates，在每個INSTALLED_APPS中找templates子目錄
         'APP_DIRS': True,
         'OPTIONS': {
@@ -124,6 +128,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# 決定我們的 css, javascript, images 放在哪裡
+# 我們這邊使用預設的 '/static/'
+# css, js, imgs 等的檔案，就放在 app 資料夾底下的 static/
+# 而取用方式，舉例 {% static 'css/open-iconic-bootstrap.min.css' %}
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static')]  # 本來字不會變色，加了這行就可了
+
+# 本來字不會變色，加了這行就可了
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static')]
 
