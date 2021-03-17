@@ -24,7 +24,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls', namespace='polls')),
-    path('blog/', include('blog.urls', namespace='blog')),
+    path('shop/', include('shop.urls', namespace='shop')),
     # path('polls/', include(polls_patterns)),
     # path('blog/', include(blog_patterns)),
 ]

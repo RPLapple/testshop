@@ -1,0 +1,262 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- collections -->
+<div class="hero-wrap hero-bread" style="background-image: url({{ bg_6 }})">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <h1 class="mb-0 bread">Collections</h1>
+        </div>
+    </div>
+</div>
+<!-- end collections -->
+
+<section class="ftco-section bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+<!--                    <a href="/product" class="img-prod"><img class="img-fluid" src="{% static 'images/product-1.jpg' %}" alt="{{ products.0.name }}">-->
+                    <a href="/product" class="img-prod"><img class="img-fluid" src="/media/{{ products.0.img }}" alt="{{ products.0.name }}">
+                        <span class="status">{{ products.0.tag }}</span>
+                    </a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="/product">{{ products.0.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span class="mr-2 price-dc">${{ products.0.price }}</span><span class="price-sale">${{ products.0.sale_price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.1.img }}" alt="{{ products.1.name }}">
+                        <span class="status">{{ products.1.tag }}</span>
+                    </a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.1.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.1.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.2.img }}" alt="{{ products.2.name }}"></a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.2.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.2.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.3.img }}" alt="{{ products.3.name }}"></a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.3.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.3.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.4.img }}" alt="{{ products.4.img }}"></a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.4.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.4.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.5.img }}" alt="{{ products.5.name }}"></a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.5.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.5.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.6.img }}" alt="{{ products.6.name }}">
+                        <span class="status">{{ products.6.tag }}</span>
+                    </a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.6.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.6.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm col-md-6 col-lg-3 ftco-animate">
+                <div class="product">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.7.img }}" alt="{{ products.7.name }}"></a>
+                    <div class="text py-3 px-3">
+                        <h3><a href="#">{{ products.7.name }}</a></h3>
+                        <div class="d-flex">
+                            <div class="pricing">
+                                <p class="price"><span>${{ products.7.price }}</span></p>
+                            </div>
+                            <div class="rating">
+                                <p class="text-right">
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                    <span class="ion-ios-star-outline"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="bottom-area d-flex">
+                            <a href="#" class="add-to-cart"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                            <a href="#" class="ml-auto"><span><i class="ion-ios-heart-empty"></i></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

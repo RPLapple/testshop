@@ -38,7 +38,7 @@ INSTALLED_APPS = [                  # Django自帶應用
     'django.contrib.messages',      # 消息框架
     'django.contrib.staticfiles',   # 管理靜態文件的框架
     'polls.apps.PollsConfig',
-    'blog',                         # 不做怎麼知道系列
+    'shop',                         # 不做怎麼知道系列
 ]
 
 MIDDLEWARE = [
