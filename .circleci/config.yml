@@ -1,20 +1,37 @@
+# CircleCI 的版本
 version: 2.1
 
 orbs:
   python: circleci/python@0.2.1
 
 jobs:
+  # 把這個工作取名叫做 `build-and-test`
   build-and-test:
-    executor: python/default
+    # 告訴 circleci，我需要 docker 的環境
+    docker:
+      # 告訴 circleci，要用 Docker Hub 上的 `circleci/python` 的映像檔
+      # 而且 tag 是要 3.8.2 的 ta
+      - image: circleci/python:3.8.2
+   # executor: python/default
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+#      - python/load-cache
+#      - python/install-deps
+#      - python/save-cache
       - run:
-          command: ./manage.py test
+          # 先安裝 django
+          command: |
+            pip install django~=3.0.3
+          # 幫這個指令取名字
+          name: Install
+      - run:
+          # 執行django測試
+          command: |
+            python manage.py test
           name: Test
 
+# 告訴 CircleCI要執行哪些工作，
+# 總共要執行 `build-and-test` 這一個工作
 workflows:
   main:
     jobs:
