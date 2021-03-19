@@ -134,6 +134,11 @@ USE_TZ = True
 # 而取用方式，舉例 {% static 'css/open-iconic-bootstrap.min.css' %}
 STATIC_URL = '/static/'
 
+# 今天的重點之一，上傳產品圖片後，會存放的地方
+# Media root for storing uploads in model
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # 本來字不會變色，加了這行就可了
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'polls/static')]
 

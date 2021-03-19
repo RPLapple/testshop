@@ -20,7 +20,7 @@
             <div class="col-sm col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
 <!--                    <a href="/product" class="img-prod"><img class="img-fluid" src="{% static 'images/product-1.jpg' %}" alt="{{ products.0.name }}">-->
-                    <a href="/product" class="img-prod"><img class="img-fluid" src="{% static 'images/product-1.jpg' %}" alt="{{ products.0.name }}">
+                    <a href="/product" class="img-prod"><img class="img-fluid" src="/media/{{ products.0.img }}" alt="{{ products.0.name }}">
                         <span class="status">{{ products.0.tag }}</span>
                     </a>
                     <div class="text py-3 px-3">
@@ -49,7 +49,7 @@
             </div>
             <div class="col-sm col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-1.jpg' %}"" alt="{{ products.1.name }}">
+                    <a href="#" class="img-prod"><img class="img-fluid" src="/media/{{ products.1.img }}" alt="{{ products.1.name }}">
                         <span class="status">{{ products.1.tag }}</span>
                     </a>
                     <div class="text py-3 px-3">
@@ -78,7 +78,7 @@
             </div>
             <div class="col-sm col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-2.jpg' %}"" alt="{{ products.2.name }}"></a>
+                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-2.jpg' %}" alt="{{ products.2.name }}"></a>
                     <div class="text py-3 px-3">
                         <h3><a href="#">{{ products.2.name }}</a></h3>
                         <div class="d-flex">
@@ -105,7 +105,7 @@
             </div>
             <div class="col-sm col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-3.jpg' %}"" alt="{{ products.3.name }}"></a>
+                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-3.jpg' %}" alt="{{ products.3.name }}"></a>
                     <div class="text py-3 px-3">
                         <h3><a href="#">{{ products.3.name }}</a></h3>
                         <div class="d-flex">
@@ -132,7 +132,7 @@
             </div>
             <div class="col-sm col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-4.jpg' %}"" alt="{{ products.4.img }}"></a>
+                    <a href="#" class="img-prod"><img class="img-fluid" src="{% static 'images/product-4.jpg' %}" alt="{{ products.4.img }}"></a>
                     <div class="text py-3 px-3">
                         <h3><a href="#">{{ products.4.name }}</a></h3>
                         <div class="d-flex">
