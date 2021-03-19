@@ -25,6 +25,9 @@ jobs:
           # 幫這個指令取名字
           name: Install
       - run:
+          command: |
+            python -m pip install Pillow
+      - run:
           # 執行django測試
           command: |
             python manage.py test
